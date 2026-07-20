@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-primary: #0f4c81;
+  --color-primary-light: #1a6bb0;
+  --color-primary-dark: #0a3459;
+  --color-secondary: #00b4d8;
+  --color-secondary-light: #48cae4;
+  --color-secondary-dark: #0086a3;
+  --color-accent: #f4a261;
+  --color-accent-light: #f7b884;
+  --color-accent-dark: #e0803a;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-dark: #1e293b;
+  --color-text: #334155;
+  --color-text-muted: #64748b;
+
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-shimmer: shimmer 1.8s infinite linear;
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: -200% 0;
+    }
+    to {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-text font-body antialiased;
+}
+
+.dark body {
+  @apply bg-dark text-slate-100;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+::selection {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.skeleton {
+  @apply bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 bg-[length:200%_100%] animate-shimmer;
+}
+.dark .skeleton {
+  @apply from-slate-700 via-slate-600 to-slate-700;
+}
+
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
+
+.article-content {
+  @apply leading-relaxed text-text-muted dark:text-slate-300;
+}
+.article-content h2 {
+  @apply mt-8 mb-3 font-heading text-2xl font-bold text-dark dark:text-white;
+}
+.article-content h3 {
+  @apply mt-6 mb-2 font-heading text-xl font-semibold text-dark dark:text-white;
+}
+.article-content p {
+  @apply mb-4;
+}
+.article-content ul,
+.article-content ol {
+  @apply mb-4 list-disc space-y-1 pl-5;
+}
+.article-content a {
+  @apply text-primary underline hover:text-primary-light dark:text-secondary-light;
+}
