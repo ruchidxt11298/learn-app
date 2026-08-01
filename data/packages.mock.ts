@@ -111,7 +111,7 @@ export const packagesMock: TourPackage[] = [
     name: "Kashmir Paradise Tour",
     destinationSlug: "jammu-and-kashmir",
     images: [img("kashmir-pkg-1", 900, 600), img("kashmir-pkg-2", 900, 600)],
-    category: "honeymoon",
+    category: "spiritual",
     price: { amount: 0, currency: "INR" },
     durationDays: 6,
     durationNights: 5,
@@ -141,7 +141,7 @@ export const packagesMock: TourPackage[] = [
     featured: true,
     seo: {
       title: "Kashmir Paradise Tour Package — 6 Days / 5 Nights",
-      description: "A Kashmir honeymoon and family tour covering Srinagar, Gulmarg, Pahalgam and Sonmarg.",
+      description: "A Kashmir spiritual and family tour covering Srinagar, Gulmarg, Pahalgam and Sonmarg.",
       keywords: ["kashmir tour package", "srinagar gulmarg pahalgam tour"],
     },
   },

@@ -8,7 +8,7 @@ import { ADVENTURE_CATEGORIES } from "@/types";
 
 const CATEGORY_IMAGES: Record<string, string> = {
   family: "family-category",
-  honeymoon: "honeymoon-category",
+  spiritual: "spiritual-category",
   wildlife: "wildlife-category",
   trekking: "trekking-category",
   beaches: "beaches-category",

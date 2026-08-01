@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [...siteConfig.keywords],
+  icons: {
+    icon: "/logo-travel.jpeg",
+    shortcut: "/logo-travel.jpeg",
+    apple: "/logo-travel.jpeg",
+  },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,

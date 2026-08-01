@@ -2,7 +2,7 @@ import type { GeoLocation, ImageAsset, Money, SeoMeta } from "./common";
 
 export type AdventureCategory =
   | "family"
-  | "honeymoon"
+  | "spiritual"
   | "wildlife"
   | "trekking"
   | "beaches"
@@ -54,7 +54,7 @@ export interface TourPackage {
 
 export const ADVENTURE_CATEGORIES: { value: AdventureCategory; label: string }[] = [
   { value: "family", label: "Family Tour" },
-  { value: "honeymoon", label: "Honeymoon" },
+  { value: "spiritual", label: "Spiritual Journey" },
   { value: "wildlife", label: "Wildlife" },
   { value: "trekking", label: "Trekking" },
   { value: "beaches", label: "Beaches" },

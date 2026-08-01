@@ -1,13 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X, Heart, Compass } from "lucide-react";
+import { Menu, X, Heart } from "lucide-react";
 import Container from "./Container";
 import { buttonVariants } from "@/components/ui/Button";
 import DarkModeToggle from "@/features/site/DarkModeToggle";
-import CurrencySwitcher from "@/features/site/CurrencySwitcher";
 import GlobalSearchBar from "@/features/search/GlobalSearchBar";
 import { useWishlistStore } from "@/store/useWishlistStore";
 import { cn } from "@/lib/utils";
@@ -49,9 +49,9 @@ export default function Navbar() {
       )}
     >
       <Container className="flex h-20 items-center justify-between gap-4 py-3">
-        <Link href="/" className="flex items-center gap-2 font-heading text-xl font-bold text-primary dark:text-white">
-          <Compass className="h-6 w-6 text-secondary" aria-hidden />
-          {siteConfig.name}
+        <Link href="/" className="flex items-center gap-3 font-heading text-xl font-bold text-primary dark:text-white">
+          <Image src="/logo-travel.jpeg" width={40} height={40} alt={`${siteConfig.name} logo`} className="rounded-full object-cover" />
+          <span>{siteConfig.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
@@ -71,7 +71,6 @@ export default function Navbar() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <GlobalSearchBar />
-          <CurrencySwitcher />
           <DarkModeToggle />
           <Link
             href="/wishlist"
@@ -116,12 +115,14 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <div className="mt-4 flex items-center justify-between gap-3">
-            <CurrencySwitcher />
-            <DarkModeToggle />
-            <Link href="/wishlist" className="flex items-center gap-1 text-sm font-medium text-text dark:text-slate-200">
-              <Heart className="h-5 w-5" /> {wishlistCount}
-            </Link>
+          <div className="mt-4 flex flex-col gap-3">
+            <GlobalSearchBar />
+            <div className="flex items-center justify-between gap-3">
+              <DarkModeToggle />
+              <Link href="/wishlist" className="flex items-center gap-1 text-sm font-medium text-text dark:text-slate-200">
+                <Heart className="h-5 w-5" /> {wishlistCount}
+              </Link>
+            </div>
           </div>
           <Link href="/booking" className={buttonVariants({ className: "mt-4 w-full" })}>
             Book Now
