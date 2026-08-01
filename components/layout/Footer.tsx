@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Compass, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube, Clock } from "lucide-react";
+import { Compass, Facebook, Instagram, Mail, MapPin, Phone, Clock } from "lucide-react";
 import Container from "./Container";
 import MapEmbed from "@/components/media/MapEmbed";
 import { siteConfig } from "@/lib/site-config";
@@ -23,9 +23,6 @@ const LEGAL_LINKS = [
 const SOCIAL_LINKS = [
   { href: siteConfig.social.facebook, icon: Facebook, label: "Facebook" },
   { href: siteConfig.social.instagram, icon: Instagram, label: "Instagram" },
-  { href: siteConfig.social.twitter, icon: Twitter, label: "Twitter" },
-  { href: siteConfig.social.youtube, icon: Youtube, label: "YouTube" },
-  { href: siteConfig.social.linkedin, icon: Linkedin, label: "LinkedIn" },
 ];
 
 export default function Footer() {

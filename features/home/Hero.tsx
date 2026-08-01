@@ -10,10 +10,10 @@ import { siteConfig } from "@/lib/site-config";
 import HeroSearch from "./HeroSearch";
 
 const DHAM_STOPS = [
-  { name: "Yamunotri", image: img("hero-yamunotri", 400, 400, "Yamunotri Temple") },
-  { name: "Gangotri", image: img("hero-gangotri", 400, 400, "Gangotri Temple") },
-  { name: "Kedarnath", image: img("hero-kedarnath", 400, 400, "Kedarnath Temple") },
-  { name: "Badrinath", image: img("hero-badrinath", 400, 400, "Badrinath Temple") },
+  { name: "Yamunotri", image: img("char-dham-yamunotri", 600, 430, "Yamunotri Temple") },
+  { name: "Gangotri", image: img("char-dham-gangotri", 600, 430, "Gangotri Temple") },
+  { name: "Kedarnath", image: img("char-dham-kedarnath", 600, 430, "Kedarnath Temple") },
+  { name: "Badrinath", image: img("char-dham-badrinath", 600, 430, "Badrinath Temple") },
 ];
 
 export default function Hero() {
@@ -26,11 +26,18 @@ export default function Hero() {
         className="absolute inset-0 -z-10"
       >
         <Image
-          src="/hero-char-dham-bg.png"
-          alt="Char Dham Yatra collage — Yamunotri, Gangotri, Kedarnath and Badrinath temples along the Uttarakhand route"
+          src="/mobile-banner.png"
+          alt="Char Dham Yatra — Yamunotri, Gangotri, Kedarnath and Badrinath temples"
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover object-top sm:hidden"
+        />
+        <Image
+          src="/char-dham-banner.PNG"
+          alt="Char Dham Yatra collage — Yamunotri, Gangotri, Kedarnath and Badrinath temples"
+          fill
+          priority
+          className="hidden object-cover object-top sm:block"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/55 to-dark/85" />
       </motion.div>
