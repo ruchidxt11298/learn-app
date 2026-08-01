@@ -50,7 +50,7 @@ export default function Navbar() {
     >
       <Container className="flex h-20 items-center justify-between gap-4 py-3">
         <Link href="/" className="flex items-center gap-3 font-heading text-xl font-bold text-primary dark:text-white">
-          <Image src="/logo-travel.jpeg" width={40} height={40} alt={`${siteConfig.name} logo`} className="rounded-full object-cover" />
+          <Image src="/logo-travel.png" width={60} height={50} alt={`${siteConfig.name} logo`} className="rounded-full object-cover" />
           <span>{siteConfig.name}</span>
         </Link>
 

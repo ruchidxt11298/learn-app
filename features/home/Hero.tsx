@@ -33,7 +33,7 @@ export default function Hero() {
           className="object-cover object-top sm:hidden"
         />
         <Image
-          src="/char-dham-banner.PNG"
+            src="/banner2.png"
           alt="Char Dham Yatra collage — Yamunotri, Gangotri, Kedarnath and Badrinath temples"
           fill
           priority
