@@ -19,7 +19,9 @@ const initialFormState: ContactMessage = {
 export default function ContactForm() {
   const [formData, setFormData] = useState<ContactMessage>(initialFormState);
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const { mutateAsync, isLoading } = useSubmitContact();
+  const contactMutation = useSubmitContact();
+  const isLoading = contactMutation.status === "pending";
+  const { mutateAsync } = contactMutation;
   const show = useToastStore((s) => s.show);
 
   function validate() {

@@ -10,10 +10,10 @@ import { siteConfig } from "@/lib/site-config";
 import HeroSearch from "./HeroSearch";
 
 const DHAM_STOPS = [
-  { name: "Yamunotri", image: img("char-dham-yamunotri", 600, 430, "Yamunotri Temple") },
-  { name: "Gangotri", image: img("char-dham-gangotri", 600, 430, "Gangotri Temple") },
-  { name: "Kedarnath", image: img("char-dham-kedarnath", 600, 430, "Kedarnath Temple") },
-  { name: "Badrinath", image: img("char-dham-badrinath", 600, 430, "Badrinath Temple") },
+  { name: "Yamunotri", image: img("char-dham-yamunotri", 600, 430, "Yamunotri Temple") , url: "/yamunotri.jpg"},
+  { name: "Gangotri", image: img("char-dham-gangotri", 600, 430, "Gangotri Temple") , url: "/gangotri.jpg"},
+  { name: "Kedarnath", image: img("char-dham-kedarnath", 600, 430, "Kedarnath Temple"), url: "/kedarnath.jpg" },
+  { name: "Badrinath", image: img("char-dham-badrinath", 600, 430, "Badrinath Temple") , url: "/badrinath.jpg"},
 ];
 
 export default function Hero() {
@@ -79,7 +79,7 @@ export default function Hero() {
           {DHAM_STOPS.map((stop) => (
             <div key={stop.name} className="flex flex-col items-center gap-2">
               <div className="relative h-16 w-16 overflow-hidden rounded-2xl ring-2 ring-white/40 sm:h-20 sm:w-20">
-                <Image src={stop.image.url} alt={stop.image.alt} fill className="object-cover" />
+                <Image src={stop.url} alt={stop.image.alt} fill className="object-cover" />
               </div>
               <span className="text-xs font-semibold text-white sm:text-sm">{stop.name}</span>
             </div>
